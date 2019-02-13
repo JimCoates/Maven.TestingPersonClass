@@ -56,9 +56,14 @@ public class TestPerson {
         // Given
         Integer expectedAge = 5;
         String expectedName = "Leon";
+        String expectedHairColor = "Brown";
+        String expectedEyeColor = "Green";
+        Double expectedHeight = 5.5;
+        Integer expectedWeight = 185;
+        Boolean expectedFemale = false;
 
         // When
-        Person person = new Person(expectedName, expectedAge);
+        Person person = new Person(expectedName, expectedAge, expectedHairColor, expectedEyeColor, expectedHeight, expectedWeight, expectedFemale);
 
         // Then
         Integer actualAge = person.getAge();
@@ -95,4 +100,78 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testSetHairColor() {
+        // Given
+        Person person = new Person();
+        String expected = "Brown";
+
+        // When
+        person.setHairColor(expected);
+        String actual = person.getHairColor();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetEyeColor() {
+        // Given
+        Person person = new Person();
+        String expected = "Green";
+
+        // When
+        person.setEyeColor(expected);
+        String actual = person.getEyeColor();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHeight() {
+        // Given
+        Person person = new Person();
+        Double expected = 5.5;
+
+        // When
+        person.setHeight(expected);
+        Double actual = person.getHeight();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetWeight() {
+        // Given
+        Person person = new Person();
+        Integer expected = 185;
+
+        // When
+        person.setWeight(expected);
+        Integer actual = person.getWeight();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetFemale() {
+        // Given
+        Person person = new Person();
+        Boolean expected = false;
+
+        // When
+        person.setFemale(expected);
+        Boolean actual = person.getFemale();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+
+
 }
+
